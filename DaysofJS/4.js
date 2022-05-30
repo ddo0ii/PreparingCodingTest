@@ -1,4 +1,5 @@
 // 4번 Arithmetic Operators
+// Day 1: Arithmetic Operators
 'use strict';
 
 process.stdin.resume();

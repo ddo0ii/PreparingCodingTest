@@ -1,5 +1,5 @@
 // 3번 모음, 자음 for of로 추출(for in, for of 비교)
-
+// Day 2: Loops
 /**
     ## 💫 for...of
 
