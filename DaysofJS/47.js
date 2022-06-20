@@ -78,5 +78,39 @@ function BinarySearchTree() {
     this.getHeight = function(root) {
 
         // Add your code here
-
+        let height = 1;
+        let height_left = -1;
+        let height_right = -1;
+        
+        if (root.left)
+            height_left = this.getHeight(root.left);
+        if (root.right)
+            height_right = this.getHeight(root.right);
+        
+        height += (height_left > height_right ? height_left : height_right);
+        
+        return height;
     }; // End of function getHeight
+}; // End of function BinarySearchTree
+
+process.stdin.resume();
+process.stdin.setEncoding('ascii');
+
+var _input = "";
+
+process.stdin.on('data', function (data) {
+    _input += data;
+});
+
+process.stdin.on('end', function () {
+    var tree = new BinarySearchTree();
+    var root = null;
+    
+    var values = _input.split('\n').map(Number);
+    
+    for (var i = 1; i < values.length; i++) {
+        root = tree.insert(root, values[i]);
+    }
+    
+    console.log(tree.getHeight(root));
+});
