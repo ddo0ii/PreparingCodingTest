@@ -20,8 +20,40 @@ Print a single line denoting the answer, rounded to a scale of  decimal places (
  */
 function processData(input) {
   //Enter your code here
+  var p =
+    parseFloat(input.split(" ")[0]) /
+    (parseFloat(input.split(" ")[0]) + parseFloat(input.split(" ")[1]));
+  var q = 1 - p;
+  var n = 6;
+  var x = 3;
+
+  var sum = 0;
+  for (let i = x; i <= n; i++) {
+    sum += binDist(i, n, p, q);
+  }
+  console.log(sum.toFixed(3));
 }
 
+function binDist(x, n, p, q) {
+  return combPerm(n, x) * Math.pow(p, x) * Math.pow(q, n - x);
+}
+function combPerm(n, x) {
+  return factorial(n) / (factorial(x) * factorial(n - x));
+}
+function factorial(num) {
+  // If the number is less than 0, reject it.
+  if (num < 0) {
+    return -1;
+  }
+  // If the number is 0, its factorial is 1.
+  else if (num == 0) {
+    return 1;
+  }
+  // Otherwise, call this recursive procedure again.
+  else {
+    return num * factorial(num - 1);
+  }
+}
 process.stdin.resume();
 process.stdin.setEncoding("ascii");
 _input = "";
