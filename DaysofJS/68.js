@@ -52,10 +52,10 @@ function processData(input) {
   }
   input = input.split`\n`;
 
-  let maxWeight = input[0] * 1;
-  let boxNum = input[1] * 1;
-  let mean = input[2] * 1;
-  let sd = input[3] * 1;
+  let maxWeight = input[0];
+  let boxNum = input[1];
+  let mean = input[2];
+  let sd = input[3];
   function cumulative(mean, sd, x) {
     let parameter = (x - mean) / (sd * Math.sqrt(2));
     return 0.5 * (1 + erf(parameter));
