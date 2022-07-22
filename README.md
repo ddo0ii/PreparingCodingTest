@@ -5,6 +5,6 @@
 ##### 현재까지 참여한 사이트이다.
 
 ### HackerRank
-Click [HackerRank](https://www.hackerrank.com/)
-### programmers
-Click [HackerRank](https://programmers.co.kr/)
+[HackerRank 바로가기](https://www.hackerrank.com/)
+### Programmers
+[Programmers 바로가기](https://programmers.co.kr/)
