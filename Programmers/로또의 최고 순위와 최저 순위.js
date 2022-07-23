@@ -13,6 +13,7 @@ win_nums의 원소들은 정렬되어 있지 않을 수도
 5. result는 ~등에서 ~등까지 할 수 있는지를 나타냄
 */
 
+/*
 function solution(lottos, win_nums) {
     var answer = [];
     let min = 0;
@@ -38,4 +39,15 @@ function solution(lottos, win_nums) {
     answer.push(min);
 
     return answer;
+}
+*/
+function solution(lottos, win_nums) {
+    const rank = [6, 6, 5, 4, 3, 2, 1];
+
+    let minCount = lottos.filter(v => win_nums.includes(v)).length;
+    let zeroCount = lottos.filter(v => !v).length;
+
+    const maxCount = minCount + zeroCount;
+
+    return [rank[maxCount], rank[minCount]];
 }
